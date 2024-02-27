@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="UTF-8">
+	<title>StreamAPI 終端操作</title>
+</head>
+
+<body>
+	<table border="1" cellpadding="0" cellspacing="0">
+		<thead>
+			<tr>
+				<th>項番</th>
+				<th>戻値の型</th>
+				<th>メソッド名称</th>
+				<th>戻値の説明</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td>1</td>
+				<td>boolean</td>
+				<td>anyMatch</td>
+				<td>ストリーム内の何れかの要素に、特定の条件を満たす要素があれば、True を返す。</td>
+			</tr>
+			<tr>
+				<td>2</td>
+				<td>boolean</td>
+				<td>allMatch</td>
+				<td>ストリーム内の全ての要素が、特定の条件を満たしたら、True を返す。</td>
+			</tr>
+			<tr>
+				<td>3</td>
+				<td>boolean</td>
+				<td>noneMatch</td>
+				<td>ストリーム内の全ての要素が、特定の条件を満たさなかったら、True を返す。</td>
+			</tr>
+			<tr>
+				<td>4</td>
+				<td>R</td>
+				<td>collect</td>
+				<td>ストリーム処理結果を、コレクションに変換して返す。
+					<ul>
+						<li>toList: リストへの変換</li>
+						<li>toSet: セットへの変換</li>
+						<li>toMap: マップへの変換</li>
+						<li>toCollection: 一般的なコレクションへの変換</li>
+					</ul>
+				</td>
+			</tr>
+			<tr>
+				<td>5</td>
+				<td>long</td>
+				<td>count</td>
+				<td>ストリーム内の要素の個数を返す。</td>
+			</tr>
+			<tr>
+				<td>6</td>
+				<td>Optional&lt;T&gt;</td>
+				<td>findAny</td>
+				<td>並列ストリームで得られた最初の結果を返す。結果は変わる可能性がある。</td>
+			</tr>
+			<tr>
+				<td>7</td>
+				<td>Optional&lt;T&gt;</td>
+				<td>findFirst</td>
+				<td>ストリームの最初の要素を返す。</td>
+			</tr>
+			<tr>
+				<td>8</td>
+				<td>void</td>
+				<td>forEach</td>
+				<td>ストリーム内の要素を順に処理する。並列ストリームでは順序を保証しないため、順番を守りたい場合はforEachOrderedメソッドを使用すること。</td>
+			</tr>
+			<tr>
+				<td>9</td>
+				<td>Optional&lt;T&gt;</td>
+				<td>count</td>
+				<td>ストリーム内の要素の個数を返す。</td>
+			</tr>
+			<tr>
+				<td>10</td>
+				<td>Optional&lt;T&gt;</td>
+				<td>max</td>
+				<td>ストリーム内の最大要素を返す。</td>
+			</tr>
+			<tr>
+				<td>11</td>
+				<td>Optional&lt;T&gt;</td>
+				<td>min</td>
+				<td>ストリーム内の最小要素を返す。</td>
+			</tr>
+			<tr>
+				<td>12</td>
+				<td>T</td>
+				<td>reduce</td>
+				<td>累積処理結果を返す。</td>
+			</tr>
+		</tbody>
+	</table>
+</body>
+
+</html>

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="UTF-8">
+	<title>StreamAPI 中間操作</title>
+</head>
+
+<body>
+	<table border="1" cellpadding="0" cellspacing="0">
+		<thead>
+			<tr>
+				<th>項番</th>
+				<th>戻値</th>
+				<th>メソッド名称</th>
+				<th>戻値の説明</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td>1</td>
+				<td>Stream&lt;T&gt;</td>
+				<td>filter</td>
+				<td>条件に一致する要素</td>
+			</tr>
+			<tr>
+				<td>2</td>
+				<td>Stream&lt;T&gt;</td>
+				<td>distince</td>
+				<td>重複を除いた要素</td>
+			</tr>
+			<tr>
+				<td>3</td>
+				<td>Stream&lt;T&gt;</td>
+				<td>limit</td>
+				<td>指定した数分の要素</td>
+			</tr>
+			<tr>
+				<td>4</td>
+				<td>Stream&lt;T&gt;</td>
+				<td>skip</td>
+				<td>指定した数分の要素を破棄した残りの要素</td>
+			</tr>
+			<tr>
+				<td>5</td>
+				<td>Stream&lt;R&gt;</td>
+				<td>map</td>
+				<td>何らかの処理が施された要素（T -> Rへ変換）</td>
+			</tr>
+			<tr>
+				<td>6</td>
+				<td>Stream&lt;R&gt;</td>
+				<td>flatmap</td>
+				<td>最小単位に変換された要素（T -> Rへ変換）</td>
+			</tr>
+			<tr>
+				<td>7</td>
+				<td>Stream&lt;T&gt;</td>
+				<td>sorted</td>
+				<td>分類された要素</td>
+			</tr>
+			<tr>
+				<td>8</td>
+				<td>Stream&lt;T&gt;</td>
+				<td>peek</td>
+				<td>主にデバックとして利用</td>
+			</tr>
+		</tbody>
+	</table>
+</body>
+
+</html>
