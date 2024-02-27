@@ -2,7 +2,8 @@
 <html>
 
 <head>
-	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="content-type" content="text/html; charset=UTF-8">
 	<title>StreamAPI 中間操作</title>
 </head>
 
@@ -51,7 +52,37 @@
 				<td>6</td>
 				<td>Stream&lt;R&gt;</td>
 				<td>flatmap</td>
-				<td>最小単位に変換された要素（T -> Rへ変換）</td>
+				<td>最小単位に変換された要素（T -> Rへ変換）
+					<ol>
+						<li>
+							例えば、２次元配列を１次元配列に平坦化する。サンプルコードは次の通り。
+							<pre>
+								<code>
+List&lt;String&gt; zoo1 = Arrays.asList("CAT", "DOG", "FOX");
+List&lt;String&gt; zoo2 = Arrays.asList("COW", "PIG", "BAT");
+List&lt;List&lt;String&gt;&gt; allZoo = Arrays.asList(zoo1, zoo2);
+List&lt;String&gt; detailAnimal = allZoo
+		.stream()
+		.flatMap(ls -&gt; ls.stream())
+		.collect(Collectors.toList());
+detailAnimal.stream().forEach(str -&gt; System.out.print(str + " "));
+								</code>
+							</pre>
+							<p>【実行結果】CAT DOG FOX COW PIG BAT </p>
+						</li>
+						<li>
+							例えば、１つの要素を２以上の要素にしたりする。この場合でも、１次元のStreamを生成する。サンプルコードは次の通り。
+							<pre>
+								<code>
+List&lt;String&gt; nameList = Arrays.asList("Tanaka", "Suzuki", "Takahashi");
+Stream&lt;Object&gt; stream = nameList.stream().flatMap(x -&gt; Stream.of(x, x.length()));
+System.out.println((stream.collect(Collectors.toList())));
+								</code>
+							</pre>
+							<p>【実行結果】[Tanaka, 6, Suzuki, 6, Takahashi, 9]</p>
+						</li>
+					</ol>
+				</td>
 			</tr>
 			<tr>
 				<td>7</td>
