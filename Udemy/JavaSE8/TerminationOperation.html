@@ -44,7 +44,11 @@
 					<ul>
 						<li>toList: リストへの変換</li>
 						<li>toSet: セットへの変換</li>
-						<li>toMap: マップへの変換</li>
+						<li>
+							toMap: マップへの変換<br>
+							【実装例】<br>
+							hoge.stream().<b>collect</b>(<b>Collectors.toMap</b>(s -> s.getKey(), s -> s));
+						</li>
 						<li>toCollection: 一般的なコレクションへの変換</li>
 					</ul>
 				</td>
