@@ -42,7 +42,11 @@
 				<td>collect</td>
 				<td>ストリーム処理結果を、コレクションに変換して返す。
 					<ul>
-						<li>toList: リストへの変換</li>
+						<li>
+							toList: リストへの変換<br>
+							【実装例】<br>
+							hoge.stream().<b>collect</b>(<b>Collectors.toList</b>());
+						</li>
 						<li>toSet: セットへの変換</li>
 						<li>
 							toMap: マップへの変換<br>
