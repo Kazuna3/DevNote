@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<style type="text/css">
+table {
+	border-collapse: collapse;
+	border: 1px solid black;
+}
+
+td {
+	border: 1px solid black;
+}
+
+th {
+	border: 1px solid black;
+	background-color: gray;
+	color: white;
+}
+</style>
+<title>Thymeleaf Sample</title>
+</head>
+<body>
+
+  <p>
+    当HTMLは、書籍「SpringFramework超入門～やさしくわかるWebアプリ開発～」の、プロジェクト「SpringThymeleafSample」の「useThymeleaf.html」を基に、私が参考情報として利用できるよう編集した内容である。
+    そのプロジェクトは、Thymeleaf について、良くまとめているので、参考すると良い。私がてを加えたものが、より参考になると思う。
+  </p>
+
+	<!-- 01：直接文字を埋め込む -->
+	<h1>01：直接文字を埋め込む</h1>
+	<h3>hello world</h3>
+
+	<hr>
+
+	<!-- 02：インライン処理 -->
+	<h1>02：インライン処理</h1>
+	<h3>こんにちは！花子さん</h3>
+
+	<hr>
+
+	<!-- 03：値結合 -->
+	<h1>03：値結合</h1>
+	<h3>明日は、晴れです。</h3>
+
+	<hr>
+
+	<!-- 04：値結合（リテラル置換） -->
+	<h1>04：値結合（リテラル置換）</h1>
+	<h3>こんにちは！花子さん</h3>
+
+	<hr>
+
+	<!-- 05：ローカル変数 -->
+	<h1>05：ローカル変数</h1>
+	<div>
+		<span>1+2 = 3</span>
+	</div>
+
+	<hr>
+
+	<!-- 06：比較と等価 -->
+	<h1>06：比較と等価</h1>
+	<p>
+		1 &gt; 10 ===&gt;
+		<span>false</span>
+	</p>
+	<p>
+		1 &lt; 10 ===&gt;
+		<span>true</span>
+	</p>
+	<p>
+		1 &gt;= 10 ===&gt;
+		<span>false</span>
+	</p>
+	<p>
+		1 &lt;= 10 ===&gt;
+		<span>true</span>
+	</p>
+	<p>
+		1 == 10 ===&gt;
+		<span>false</span>
+	</p>
+	<p>
+		1 != 10 ===&gt;
+		<span>true</span>
+	</p>
+	<p>
+		太郎 == 太郎 ===&gt;
+		<span>true</span>
+	</p>
+	<p>
+		太郎 != 太郎 ===&gt;
+		<span>false</span>
+	</p>
+
+	<hr>
+
+	<!-- 07：条件演算子（三項演算子） -->
+	<h1>07：条件演算子（三項演算子）</h1>
+	<p>太郎さんではありません</p>
+
+	<hr>
+
+	<!-- 08_1：条件分岐（true） -->
+	<h1>08_1：条件分岐（true）</h1>
+	
+
+	<hr>
+
+	<!--
+		08_2：条件分岐（true）th:block の用例
+		<th:block> タグは、レンダリング後に消去される。
+		よって、上の 08_1 のように div タグを使わず済ませたい場合などに有用かもしれない。
+	-->
+	<h1>08_2：条件分岐（true）th:block の用例</h1>
+	<p>
+		&lt;th:block&gt; タグは、レンダリング後に消去される。
+		よって、上の 08_1 のように div タグを使わず済ませたい場合などに有用かもしれない。
+	</p>
+	
+
+	<hr>
+
+	<!-- 09：条件分岐（false） -->
+	<h1>09：条件分岐（false）</h1>
+	
+
+	<hr>
+
+	<!-- 10：条件分岐（false） -->
+	<h1>10：条件分岐（false）</h1>
+	<div>
+		
+		
+		<p>花子です！</p>
+		
+	</div>
+
+	<hr>
+
+	<!-- 11：参照（データをまとめたオブジェクト） -->
+	<h1>11：参照（データをまとめたオブジェクト）</h1>
+	<p>
+		${オブジェクト名.フィールド名}でアクセス
+		<span>1</span>
+		<span>会員01</span>
+	</p>
+	<p>
+		${オブジェクト名['フィールド名']}でアクセス
+		<span>1</span>
+		<span>会員01</span>
+	</p>
+
+	<hr>
+
+	<!-- 12：参照（データをまとめたオブジェクト） -->
+	<h1>12：参照（データをまとめたオブジェクト）</h1>
+	
+		<p>
+			*{フィールド名}でアクセス
+			<span>1</span>
+			<span>会員01</span>
+		</p>
+		<p>
+			*{['フィールド名']}でアクセスでアクセス
+			<span>1</span>
+			<span>会員01</span>
+		</p>
+	
+
+	<hr>
+
+	<!-- 13：参照（List） -->
+	<h1>13：参照（List）</h1>
+	<p>
+		<span>東</span>
+		<span>西</span>
+		<span>南</span>
+		<span>北</span>
+	</p>
+
+	<hr>
+
+	<!-- 14：参照（Map） -->
+	<h1>14：参照（Map）</h1>
+	<p>
+		.でアクセス：
+		<span>田中</span>
+		<span>鈴木</span>
+	</p>
+	<p>
+		[]でアクセス：
+		<span>田中</span>
+		<span>鈴木</span>
+	</p>
+
+	<hr>
+
+	<!-- 15：繰り返し -->
+	<h1>15：繰り返し</h1>
+	<div>
+		<p>10:田中</p>
+	</div>
+	<div>
+		<p>20:鈴木</p>
+	</div>
+
+	<hr>
+
+	<!-- 16：繰り返しのステータス -->
+	<h1>16：繰り返しのステータス</h1>
+	<div>
+		<p>
+			index->0,
+			count->1,
+			size->2,
+			current->Member(id=10, name=田中),
+			even->false,
+			odd->true,
+			first->true,
+			last->false,
+			10:田中
+		</p>
+	</div>
+	<div>
+		<p>
+			index->1,
+			count->2,
+			size->2,
+			current->Member(id=20, name=鈴木),
+			even->true,
+			odd->false,
+			first->false,
+			last->true,
+			20:鈴木
+		</p>
+	</div>
+
+	<hr>
+
+	<!-- 17：ユーティリティオブジェクト（数値・日時・文字列） -->
+	<h1>17：ユーティリティオブジェクト（数値・日時・文字列）</h1>
+	<p>
+		ユーティリティオブジェクトは、thymeleaf の jar に収録されている API である。
+		例えば、#numbers は、<br>
+		import org.thymeleaf.expression.Numbers;<br>
+		でインポート可能なクラスである。
+		故に、下の例以外のメソッドもある為、ソースを確認することは有効かもしれない。
+		ユーティリティオブジェクトは、"org.thymeleaf.expression"の下位にまとめられている。
+	</p>
+	<div>
+		整数のフォーマット:
+		<span>1,000,000</span>
+		<br> 浮動小数点のフォーマット:
+		<span>123,456.79</span>
+	</div>
+	<br>
+	<div>
+		yyyy/mm/dd 形式:
+		<span>2024/03/09</span>
+		<br> yyyy年mm月dd日形式:
+		<span>2024年03月09日</span>
+		<br> yyyy年:
+		<span>2024</span>
+		<br> MM月:
+		<span>3</span>
+		<br> dd日:
+		<span>9</span>
+		<br> 曜日:
+		<span>7</span>
+		<br>
+	</div>
+	<br>
+	<div>
+		大文字変換:
+		<span>ABCDEF</span>
+		<br> 空文字判定:
+		<span>false</span>
+		<br> 長さ:
+		<span>6</span>
+		<br>
+	</div>
+	<h3>使用頻度が高そうなユーティリティオブジェクト一覧表</h3>
+    <table>
+        <tr>
+            <th>クラス名</th>
+            <th>ユーティリティオブジェクト名</th>
+        </tr>
+        <tr>
+            <td>Strings</td>
+            <td>#strings</td>
+        </tr>
+        <tr>
+            <td>Numbers</td>
+            <td>#numbers</td>
+        </tr>
+        <tr>
+            <td>Bools</td>
+            <td>#bools</td>
+        </tr>
+        <tr>
+            <td>Dates</td>
+            <td>#dates</td>
+        </tr>
+        <tr>
+            <td>Objects</td>
+            <td>#objects</td>
+        </tr>
+        <tr>
+            <td>Arrays</td>
+            <td>#arrays</td>
+        </tr>
+        <tr>
+            <td>Lists</td>
+            <td>#lists</td>
+        </tr>
+        <tr>
+            <td>Sets</td>
+            <td>#sets</td>
+        </tr>
+        <tr>
+            <td>Maps</td>
+            <td>#maps</td>
+        </tr>
+    </table>
+
+	<hr>
+
+	<!-- 18：フラグメントを埋め込む -->
+	<h1>18：フラグメントを埋め込む</h1>
+	<h3>Fragment をこの下に埋め込む</h3>
+	<div><span>ワン</span></div>
+	<span>スリー</span>
+
+</body>
+</html>
