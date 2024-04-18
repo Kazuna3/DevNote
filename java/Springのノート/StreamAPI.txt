@@ -1,0 +1,4 @@
+■loop 処理で、インクリメントなどする場合は、①や②を利用すると良い。③は執筆時点で使い方が良く分かっていない。
+①AtomicInteger
+②AtomicLong
+③AtomicBoolean
