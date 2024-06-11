@@ -1,31 +1,31 @@
-��<association>�^�O��<collection>�^�O�̈Ⴂ 
-�i�Q�l�����Fhttps://qiita.com/Jackoguro/items/d62cba12b5c4b2c35e49�j
+■<association>タグと<collection>タグの違い
+（参考資料：https://qiita.com/Jackoguro/items/d62cba12b5c4b2c35e49）
 
-�E<association>�^�O
-  1�̃��R�[�h �f�[�^���Ԃ��ė���ꍇ�Ɏg�p����B��{�I�Ƀg�����U�N�V�����e�[�u������}�X�^�e�[�u������������ۂɎg�p����B
+・<association>タグ
+  1つのレコード データが返って来る場合に使用する。基本的にトランザクションテーブルからマスタテーブルを結合する際に使用する。
 
-�E<collection>�^�O
-  �����̃��R�[�h �f�[�^���Ԃ��Ă���ꍇ�Ɏg�p����B��{�I�Ƀ}�X�^�e�[�u������g�����U�N�V�����e�[�u������������ۂɎg�p����B
+・<collection>タグ
+  複数のレコード データが返ってくる場合に使用する。基本的にマスタテーブルからトランザクションテーブルを結合する際に使用する。
 
 
-��columnPrefix ����
-�i�Q�l�����Fhttps://qiita.com/Jackoguro/items/d62cba12b5c4b2c35e49�j
+■columnPrefix 属性
+（参考資料：https://qiita.com/Jackoguro/items/d62cba12b5c4b2c35e49）
 
-�����̃e�[�u������������ꍇ�ASELECT���ʂ̃J���������d�����邱�Ƃ�����܂��B
-�J�������̏d��������邽�߂�SELECT���ʂɕʖ���t���邱�Ƃ�����܂��B
-�������A�ʖ���t����ƃ}�b�s���O��`�̃J�������ƈ�v���Ȃ��Ȃ��Ă��܂��܂��B
-���̖����������邽�߂Ɏg�p����̂�columnPrefix�����ł��B
+複数のテーブルを結合する場合、SELECT結果のカラム名が重複することがあります。
+カラム名の重複を避けるためにSELECT結果に別名を付けることがあります。
+ただし、別名を付けるとマッピング定義のカラム名と一致しなくなってしまいます。
+その問題を解決するために使用するのがcolumnPrefix属性です。
 
-�y������z
-  <!-- �}�b�s���O��`(���[�U�[)�̈ꕔ���� -->
+【実装例】
+  <!-- マッピング定義(ユーザー)の一部抜粋 -->
   <collection property="purchaseList" resultMap="purchase" columnPrefix="purchase_" />
 
-  <!-- ���[�U�[���1���擾�̈ꕔ���� -->
+  <!-- ユーザー情報1件取得の一部抜粋 -->
   <select id="findOneMUser" resultMap="muser">
   SELECT  
-      <!-- �ȗ� -->
+      <!-- 省略 -->
   T_PURCHASE.PRODUCT_ID AS PURCHASE_PRODUCT_ID,
   T_PURCHASE.COUNT AS PURCHASE_COUNT,
   T_PURCHASE.PURCHASE_DATE AS PURCHASE_PURCHASE_DATE
-      <!-- �ȗ� -->
+      <!-- 省略 -->
   </select>
