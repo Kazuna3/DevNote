@@ -1,4 +1,4 @@
-■<association>タグと<collection>タグの違い
+■<association>タグと<collection>タグの違い 
 （参考資料：https://qiita.com/Jackoguro/items/d62cba12b5c4b2c35e49）
 
 ・<association>タグ
