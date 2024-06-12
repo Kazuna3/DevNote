@@ -33,13 +33,13 @@ Javaでよく使われるモックフレームワークにMockitoがあります
 
 Pleiades All in One Eclipseのインストール方法は[この記事](https://www.tsuchiya.blog/spring-boot-development-environment/)の1を参考にしてください。
 
-![img](C:\Users\Kazunari\Documents\1000Develop\Java\Mockito\MrTutiya\MarkDown\material\b086fc18c274c2956fc7985136bf2c84-160x90.png)
+![img](./material/b086fc18c274c2956fc7985136bf2c84-160x90.png)
 
 Windows10上でSpring Boot開発環境を構築する
 
 モックフレームワークと関連が強い[DI（Dependency injection：依存性注入）の説明](https://www.tsuchiya.blog/spring-boot-step5/)をSpring Bootを使って行っています。
 
-![img](C:\Users\Kazunari\Documents\1000Develop\Java\Mockito\MrTutiya\MarkDown\material\13beea7e92c9edd19f1a78fee928ad0d-160x90.png)
+![img](./material/13beea7e92c9edd19f1a78fee928ad0d-160x90.png)
 
 [v3.1.0対応]Spring Boot入門：ServiceとDI(依存性の注入)
 
@@ -65,13 +65,13 @@ Windows10上でSpring Boot開発環境を構築する
 
 最初に書いたとおり、この記事のソースコードは[Githubに公開](https://github.com/gsg0222/mockito_test)しています。
 
-![img](C:\Users\Kazunari\Documents\1000Develop\Java\Mockito\MrTutiya\MarkDown\material\mockito_test)
+![img](./material/mockito_test)
 
 GitHub - gsg0222/mockito_test
 
 Eclipseにインポートする方法は次の[記事を参考](https://www.tsuchiya.blog/github-to-eclipse/)にしてください。記事ではSpring Bootのプロジェクトをインポートすると書いてありますが、今回のMockitoに関するサンプルコードもMavenを利用しており、ほぼ同じ作業でインポートできます。
 
-![img](C:\Users\Kazunari\Documents\1000Develop\Java\Mockito\MrTutiya\MarkDown\material\1386beed9fb009070229aea6628362c9-160x90.png)
+![img](./material/1386beed9fb009070229aea6628362c9-160x90.png)
 
 GithubからSpring BootプロジェクトをEclipseにインポートする
 
@@ -108,7 +108,7 @@ Mavenと同じく、最新のバージョンを使いたい場合は[Maven Repos
 
 最近はあんまりjarを使う機会も少ないでしょうが、jarは[次のURL](https://repo1.maven.org/maven2/org/mockito/mockito-core/)から取得できます。
 
-![img](C:\Users\Kazunari\Documents\1000Develop\Java\Mockito\MrTutiya\MarkDown\material\https%3A%2F%2Frepo1.maven.org%2Fmaven2%2Forg%2Fmockito%2Fmockito-core%2F)
+![img](./material/https%3A%2F%2Frepo1.maven.org%2Fmaven2%2Forg%2Fmockito%2Fmockito-core%2F)
 
 Central Repository: org/mockito/mockito-core
 
@@ -145,7 +145,7 @@ Javaの場合は、特定の引数に対応する形でメソッドの戻り値�
 
 出所：[【Java】Mockitoの飲み方（入門） | CCT-recruit (cct-inc.co.jp)](https://recruit.cct-inc.co.jp/tecblog/java/mockito-primer/)
 
-![img](C:\Users\Kazunari\Documents\1000Develop\Java\Mockito\MrTutiya\MarkDown\material\stubMockSpy.png)
+![img](./material/stubMockSpy.png)
 
 ## サンプルとして使うServiceとRepository
 
@@ -268,7 +268,7 @@ public class MockSample {
 
 このクラスの実行結果は次のようになります。
 
-![MockSampleの実行結果](C:\Users\Kazunari\Documents\1000Develop\Java\Mockito\MrTutiya\MarkDown\material\image.png)
+![MockSampleの実行結果](./material/image.png)
 
 mockSample.saveLength(“string”)が実行されているのに、repositoryで実行されるはずのprintlnが実行されていないことがわかります。
 
@@ -336,7 +336,7 @@ SpySampleではRepositorySampleクラスのインスタンスをspyメソッド�
 
 実行結果は以下の通りとなります。
 
-![SpySampleの実行結果](C:\Users\Kazunari\Documents\1000Develop\Java\Mockito\MrTutiya\MarkDown\material\image-1.png)
+![SpySampleの実行結果](./material/image-1.png)
 
 スタブ化しなかったsaveLengthメソッドは通常の通り実行され、スタブ化したsaveLengthImplのprintlnは実行されませんでした。
 
