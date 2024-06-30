@@ -4,7 +4,7 @@
 つまり、最初の条件は'AND'なし、二つ目以降は'AND'を付加する。と言った判断ロジックが不要になる。
 
 SELECT
-	t
+	*
 FROM
 	Todo t
 WHERE
